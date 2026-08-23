@@ -1,7 +1,7 @@
 # Subtract's Homebrew tap
 
 ```sh
-brew install --cask subtractdotdesign/tap/portside
+brew install --cask sbtrct/tap/portside
 ```
 
 | Cask | Description |
