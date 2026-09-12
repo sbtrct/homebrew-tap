@@ -1,6 +1,6 @@
 cask "portside" do
-  version "0.3.0"
-  sha256 "f274643c6d4cc0e247e49b1e342dfa81a4f445a4813934e64f101daffd0091c3"
+  version "0.4.0"
+  sha256 "6439fcf6c561cb51ebbe2b56e34cb51876ddb232e73f8c5532fda3fad8b7bf3e"
 
   url "https://github.com/sbtrct/portside/releases/download/v#{version}/Portside-#{version}.dmg"
   name "Portside"
@@ -15,6 +15,10 @@ cask "portside" do
   depends_on macos: :sonoma
 
   app "Portside.app"
+
+  # Without this, `brew upgrade` replaces the bundle underneath a running
+  # Portside, which keeps serving the old version until the user notices.
+  uninstall quit: "design.subtract.portside"
 
   zap trash: [
     "~/Library/Application Support/Portside",
